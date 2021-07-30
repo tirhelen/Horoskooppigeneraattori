@@ -18,6 +18,5 @@ Ohjelma saa syötteeksi oikeita horoskooppitekstejä. Ohjelma tutkii mitkä sana
 Ohjelman aikavaativuus olisi O(m), missä m on lauseiden pituus ts. käytettävien sanojen määrä. 
 
 ## Lähteet:
-Lisään projektin edetessä
- 
+Opetusaineisto koostettu [Ilta-Sanomat, Me Naiset, 21.6. - 27.7.2021](https://www.is.fi/menaiset/horoskooppi/) 
 

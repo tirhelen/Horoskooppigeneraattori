@@ -32,3 +32,4 @@ class Trie:
                     break
             if found is False:
                 self.hashmap[a].append([b,1])
+                
