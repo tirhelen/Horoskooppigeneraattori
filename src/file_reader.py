@@ -1,5 +1,5 @@
 import os
-from trie import TrieNode
+from trie import Trie
 
 def read_file(filename):
     """Funktio lukee tekstitiedoston, jossa opetusdata on.
@@ -26,14 +26,14 @@ def read_file(filename):
 
 if __name__ == "__main__":
     list = read_file("aineisto.txt")
+    trie = Trie()
     print(len(list))
-    nodelist = []
     for i in range(len(list)-1):
-        if i-1 < 0:
-            node = TrieNode(list[i], "x")
-        else:
-            node = TrieNode(list[i], list[i-1])
-        nodelist.append(node)
-    for node in nodelist:
-        print(node.prev, node.word)
-        
+        trie.add_edge(list[i], list[i+1])
+
+    for key in trie.hashmap:
+        print(key)
+        print("-")
+        for x in trie.hashmap[key]:
+            print(x)
+        print("----")
