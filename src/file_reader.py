@@ -1,7 +1,7 @@
 import os
 from trie import Trie
 
-def read_file(filename):
+def read_file(file):
     """Funktio lukee tekstitiedoston, jossa opetusdata on.
     Palauttaa listan datassa esiintyneista sanoista (ja valimerkeista)
     Args:
@@ -9,9 +9,7 @@ def read_file(filename):
     Returns:
         list : lista sanoista ja valimerkeista
     """
-    current_dir = os.path.dirname(__file__)
-    parent_dir = os.path.split(current_dir)[0]
-    file = os.path.join(parent_dir, filename)
+
     file = open(file, "r")
     content = file.read()
     content = content.replace("\n", " ")
@@ -25,7 +23,11 @@ def read_file(filename):
     return list
 
 if __name__ == "__main__":
-    list = read_file("aineisto.txt")
+    current_dir = os.path.dirname(__file__)
+    parent_dir = os.path.split(current_dir)[0]
+    file = os.path.join(parent_dir, "aineisto.txt")
+
+    list = read_file(file)
     trie = Trie()
     print(len(list))
     for i in range(len(list)-1):
