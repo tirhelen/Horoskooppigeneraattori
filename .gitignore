@@ -1,5 +1,7 @@
 .coverage
 
+src/__pycache__
+
 __pycache__
 
 htmlcov
