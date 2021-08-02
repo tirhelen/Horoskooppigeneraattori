@@ -1,6 +1,7 @@
 import os
 from trie import Trie
 
+
 def read_file(file):
     """Funktio lukee tekstitiedoston, jossa opetusdata on.
     Palauttaa listan datassa esiintyneista sanoista (ja valimerkeista)
