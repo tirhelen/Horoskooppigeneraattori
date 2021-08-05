@@ -1,40 +1,28 @@
 # -*- coding: utf-8 -*-
 import random
-import os
-from trie import Trie
-from file_reader import read_file
 
 
 def create_sentence(dict, start, sentence):
-    if start == "x":
+    """luo virkkeen käyttäen toisen asteen Markovin ketjua
+
+    Args:
+        dict (dictionary): käytettävä trie, johon aineisto on tallennettu
+        start (string): virkkeen aloitussana tai myöhemmin seuraava valittu sana
+        sentence (list): lista, johon muodostettava lause kootaan
+
+    Returns:
+        sentence (list): lista lopullisesta lauseesta
+    """
+    choices = []
+    for x in dict[start]:
+        for i in range(x[1]):
+            if x[0] not in ["JOUSIMIES", "KAKSONEN", "RAPU", "LEIJONA",
+                            "VESIMIES", "NEITSYT", "SKORPIONI", "HÄRKÄ",
+                            "OINAS", "VAAKA", "KAURIS", "KALAT"]:
+                choices.append(x[0])
+    next = random.choice(choices)
+    sentence.append(next)
+    if next == ".":
         return sentence
-    elif sentence.count(".") >= 3:
-        return sentence
-    else:
-        choices = []
-        for x in dict[start]:
-            for i in range(x[1]):
-                if x[0] not in ["JOUSIMIES", "KAKSONEN", "RAPU", "LEIJONA",
-                                "VESIMIES", "NEITSYT", "SKORPIONI", "HÄRKÄ",
-                                "OINAS", "VAAKA", "KAURIS", "KALAT"]:
-                    choices.append(x[0])
-        next = random.choice(choices)
-        if next != "x":
-            sentence.append(next)
-        return create_sentence(dict, next, sentence)
-
-
-if __name__ == "__main__":
-    current_dir = os.path.dirname(__file__)
-    parent_dir = os.path.split(current_dir)[0]
-    file = os.path.join(parent_dir, "aineisto.txt")
-
-    list = read_file(file)
-    trie = Trie()
-
-    for i in range(len(list)-1):
-        if list[i] == ".":
-            trie.add_edge(list[i], "x")
-        trie.add_edge(list[i], list[i+1])
-    x = create_sentence(trie.hashmap, "NEITSYT", ["NEITSYT"])
-    print(" ".join(x))
+    next = sentence[-2] + " " + sentence[-1]
+    return create_sentence(dict, next, sentence)

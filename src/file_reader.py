@@ -1,12 +1,10 @@
-import os
-from trie import Trie
-
+# -*- coding: utf-8 -*-
 
 def read_file(file):
     """Funktio lukee tekstitiedoston, jossa opetusdata on.
     Palauttaa listan datassa esiintyneista sanoista (ja valimerkeista)
     Args:
-        filename (): opetusdatatiedoston nimi
+        filename (string): opetusdatatiedoston nimi
     Returns:
         list : lista sanoista ja valimerkeista
     """
@@ -22,21 +20,3 @@ def read_file(file):
             list.remove(word)
     file.close()
     return list
-
-if __name__ == "__main__":
-    current_dir = os.path.dirname(__file__)
-    parent_dir = os.path.split(current_dir)[0]
-    file = os.path.join(parent_dir, "aineisto.txt")
-
-    list = read_file(file)
-    trie = Trie()
-    print(len(list))
-    for i in range(len(list)-1):
-        trie.add_edge(list[i], list[i+1])
-
-    for key in trie.hashmap:
-        print(key)
-        print("-")
-        for x in trie.hashmap[key]:
-            print(x)
-        print("----")

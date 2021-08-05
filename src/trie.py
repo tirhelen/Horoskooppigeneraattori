@@ -1,17 +1,13 @@
-class TrieNode:
-    """luokka trie-solmulle, ei viela valmis tai kaytossa
-    """
-    def __init__(self, word):
-        self.word = word
-        self.appeared = 0
-
+# -*- coding: utf-8 -*-
 class Trie:
     """luokka Trie-puurakenteelle, tallentaa solmun ja sen lapset sanakirjaan
     """
-    def __init__(self):
-        """rakenteen konstruktori, luo tyhjan sanakirjan
+    def __init__(self, lista):
+        """rakenteen konstruktori, luo sanakirjan, joka täytetään create-funktion avulla
         """
         self.hashmap = {}
+        self.lista = lista
+        self.create()
 
     def add_edge(self, a, b):
         """lisaa kaaren kahden solmun
@@ -32,4 +28,23 @@ class Trie:
                     break
             if found is False:
                 self.hashmap[a].append([b,1])
-                
+
+
+    def create(self):
+        """funktio, joka täyttää sanakirjan aineistosta muodostetun listan perusteella.
+            sanakirjaan lisätään avaimiksi jokainen sana ja merkki sekä aina kaksi
+            peräkkäin esiintyvää sanaa/merkkiä
+        """
+        for i in range(len(self.lista)-1):
+            self.add_edge(self.lista[i], self.lista[i+1])
+
+        for i in range(len(self.lista)-1):
+            if self.lista[i+1] != ".":
+                a = self.lista[i] + " " + self.lista[i+1]
+                self.add_edge(a, self.lista[i+2])
+
+            elif self.lista[i] == "." or self.lista[i] in ["JOUSIMIES", "KAKSONEN", "RAPU",
+                                                "LEIJONA", "VESIMIES", "NEITSYT", "SKORPIONI",
+                                                "HÄRKÄ", "OINAS", "VAAKA", "KAURIS", "KALAT"]:
+                self.add_edge(self.lista[i], self.lista[i+1])
+        
