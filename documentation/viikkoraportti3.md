@@ -1,4 +1,4 @@
-# Viikko 4
+# Viikko 3
 
 Alkuviikosta sain toteutettua 1. asteen Markovin ketjun toiminnan.
 Tässä vaiheessa lauseet saattoivat olla melko järjettömiä, joten jatkoin 2. asteen Markovin ketjuun.
