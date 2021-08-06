@@ -6,7 +6,6 @@ Sain sen toimimaan tallentamalla trien avaimiksi yksittäisten sanojen lisäksi 
  Nyt lauseista saattaa yhä tulla hieman epämääräisiä, mutta selkeästi useammin loogisia kuin 1. asteen ketjun toteutuksella.
 Tämän muutoksen myötä muokkasin myös trien testiä sopivammaksi.
  Markovin ketjulle en vielä ole kirjoittanut testiä, koska en ole varma, kuinka testaus tulisi toteuttaa arvontaosuuden takia.
- 
 Kirjoitin ohjelmalle myös task-komentoja testikattavuutta ja koodin laadun seurantaa varten. 
 Tein myös alustavan käyttöliittymän ohjelmalle.  
 Markovin ketjun testauksen lisäksi pohdin, onko työni riittävän laaja pelkästään 2. asteen ketjua käyttämällä 
