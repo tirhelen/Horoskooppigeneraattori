@@ -1,12 +1,17 @@
 # -*- coding: utf-8 -*-
+import os
+from file_reader import read_file
+from markov_chain import create_sentence
+
 class Trie:
     """luokka Trie-puurakenteelle, tallentaa solmun ja sen lapset sanakirjaan
     """
-    def __init__(self, lista):
+    def __init__(self, lista, degree):
         """rakenteen konstruktori, luo sanakirjan, joka täytetään create-funktion avulla
         """
         self.hashmap = {}
         self.lista = lista
+        self.degree = degree
         self.create()
 
     def add_edge(self, a, b):
@@ -35,16 +40,29 @@ class Trie:
             sanakirjaan lisätään avaimiksi jokainen sana ja merkki sekä aina kaksi
             peräkkäin esiintyvää sanaa/merkkiä
         """
-        for i in range(len(self.lista)-1):
-            self.add_edge(self.lista[i], self.lista[i+1])
+        help_list = []
+        last = self.lista[-1]
 
-        for i in range(len(self.lista)-1):
-            if self.lista[i+1] != ".":
-                a = self.lista[i] + " " + self.lista[i+1]
-                self.add_edge(a, self.lista[i+2])
+        for i in range(self.degree+2):
+            help_list.append(self.lista[i])
 
-            elif self.lista[i] == "." or self.lista[i] in ["JOUSIMIES", "KAKSONEN", "RAPU",
-                                                "LEIJONA", "VESIMIES", "NEITSYT", "SKORPIONI",
-                                                "HÄRKÄ", "OINAS", "VAAKA", "KAURIS", "KALAT"]:
-                self.add_edge(self.lista[i], self.lista[i+1])
-        
+        for i in range(len(self.lista)-self.degree-1):
+            key = ""
+            for j in range(len(help_list)-2):
+                key += help_list[j] + " "
+            self.add_edge(key, help_list[-1])
+            help_list.pop(0)
+            help_list.append(self.lista[i+self.degree+1])
+        return
+
+if __name__ == "__main__":
+    current_dir = os.path.dirname(__file__)
+    parent_dir = os.path.split(current_dir)[0]
+    file = os.path.join(parent_dir, "aineisto.txt")
+    word_list = read_file(file)
+
+    trie = Trie(word_list, 3)
+    print(trie.hashmap)
+    #text = []
+    #first = create_sentence(trie.hashmap, ". KAKSONEN Tee ", [". KAKSONEN Tee "])
+    #print(first)
