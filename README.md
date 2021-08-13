@@ -11,6 +11,7 @@
 [Viikkoraportti 4](https://github.com/tirhelen/tiralabra/blob/87dd8a3d9359f39fa4250d2d9c87909a7e4632c7/documentation/viikkoraportti4.md)
 <br>
 [Alustava testausraportti](https://github.com/tirhelen/tiralabra/blob/87dd8a3d9359f39fa4250d2d9c87909a7e4632c7/documentation/testausraportti.md)
+<br>
 Testit voi suorittaa komennolla: poetry run invoke test <br>
 Testikattavuuden näkee komennolla: poetry run invoke coverage-report <br>
 Koodin laadun arvion näkee komenolla: poetry run invoke lint <br>
