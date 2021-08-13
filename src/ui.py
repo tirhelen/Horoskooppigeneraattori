@@ -12,9 +12,7 @@ class UI:
         current_dir = os.path.dirname(__file__)
         parent_dir = os.path.split(current_dir)[0]
         file = os.path.join(parent_dir, "aineisto.txt")
-        word_list = read_file(file)
-
-        self.trie = Trie(word_list)
+        self.word_list = read_file(file)
 
     def commands(self):
         """kysyy käyttäjältä horoskoopin ja ennustuksen pituuden
@@ -24,32 +22,30 @@ class UI:
             prediction (sting): lopullinen ennustus siistityssä muodossa
         """
         horoscope = input("Kirjoita CAPSILLA horoskooppimerkki, jolle haluat ennustuksen: ")
-        amount = int(input("Kuinka monta virkettä haluat? (1-10):" ))
-        text = []
-        first = create_sentence(self.trie.hashmap, horoscope, [horoscope])
-        text.append(first)
-        for i in range(amount-1):
-            sentence = create_sentence(self.trie.hashmap, ".", ["."])
-            text.append(sentence)
-        prediction = self.output(text)
+        horoscope += " "
+        amount = int(input("Kuinka monta virkettä haluat?: "))
+        degree = int(input("Valitse Markovin ketjun aste: "))
+        self.trie = Trie(self.word_list, degree)
+        text_list = create_sentence(self.trie.hashmap, horoscope, [horoscope], degree, [], amount)
+        prediction = self.output(text_list)
         return prediction
 
     def output(self, text):
         """siistii ennustetekstin helposti luettavaan muotoon
 
         Args:
-            text (list): lista listoista, jotka sisältävät kunkin muodostetun virkkeen sanat
+            text (list): lista, joka sisältää ennustukseen kuuluvat sanat
 
         Returns:
             string: siistitty ennusteteksti joka voidaan tulostaa käyttäjälle
         """
-        string = ""
-        for list in text:
-            for i in range(len(list)-1):
-                if list[i] == "." and list[i+1] != "." or list[i] == "," or i == 0:
-                    string += list[i]
-                else:
-                    string += " " + list[i]
+        for i in range(len(text)-1):
+
+            if text[i+1] == ". " or text[i+1] == ", ":
+                text[i] = text[i][:-1]
+
+        string = ''.join(map(str, text))
+
         return string
 
 
