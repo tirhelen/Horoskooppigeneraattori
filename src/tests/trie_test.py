@@ -10,6 +10,7 @@ class TestTrie(unittest.TestCase):
         self.trie = Trie(self.list)
 
     def test_correct_key_values(self):
+        # Huom! Tämä testi ei ole vielä päivitetty vastaamaan trien nykyistä toimintaa
         help_list = []
         for i in range(len(self.list)-1):
             if self.list[i] not in help_list:
