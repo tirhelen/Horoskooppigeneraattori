@@ -1,6 +1,6 @@
 import unittest
 import os
-from file_reader import read_file
+from ..file_reader import read_file
 
 class TestFileReader(unittest.TestCase):
     def test_correct_list_from_file(self):

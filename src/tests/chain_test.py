@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
-from markov_chain import create_sentence
-from trie import Trie
+from ..markov_chain import create_sentence
+from ..trie import Trie
 
 
 class TestMarkovChain(unittest.TestCase):
