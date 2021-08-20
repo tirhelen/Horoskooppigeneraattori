@@ -3,16 +3,20 @@ import random
 
 
 def create_sentence(dict, start, sentence, degree, help_list, length):
-    """luo virkkeen käyttäen toisen asteen Markovin ketjua
+    """luo ennustuksen käyttäen syötteenä annettavaa pituutta ja ketjun astetta
 
     Args:
         dict (dictionary): käytettävä trie, johon aineisto on tallennettu
         start (string): virkkeen aloitussana tai myöhemmin seuraava valittu sana
         sentence (list): lista, johon muodostettava lause kootaan
+        degree (int): käytettävä markovin ketjun aste
+        help_list (list): apulista, jota käytetään uuden avaimen valitsemiseksi
+        lenght (int): ennustuksen pituus virkkeinä
 
     Returns:
         sentence (list): lista lopullisesta lauseesta
     """
+
     if sentence.count(". ") == length:
         return sentence
 
