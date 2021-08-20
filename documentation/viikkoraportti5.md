@@ -5,3 +5,5 @@ päivitin docstringejä. Aloitin toteutusdokumentaation kirjoittamisen ja tein s
 pakkauskaavion. Päivitin ohjelman käyttöliittymää ja lisäsin syötteen tarkistuksen. Tein myös vertaisarvioinnin.
 <br>
 Käytin projektiin tällä viikolla n. 6h.
+<br>
+Ensi viikolla jatkan toteutus- ja testausdokumenttien kirjoittamista sekä mahdollisesti parantelen ohjelmaa vertaisarvioinnin/ohjaajan palautteen mukaan.
