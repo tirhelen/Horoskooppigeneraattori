@@ -41,7 +41,8 @@ class UI:
             elif command == 2:
                 self.create_prediction()
             elif command == 1:
-                text_list = create_sentence(self.trie.hashmap, self.horoscope, [self.horoscope], self.degree, [], self.amount)
+                text_list = create_sentence(self.trie.hashmap, self.horoscope,
+                [self.horoscope], self.degree, [], self.amount)
                 prediction = self.output(text_list)
                 print(prediction)
 
@@ -71,7 +72,8 @@ class UI:
                 print("! Kirjoita määrä numeroina !")
 
         self.trie = Trie(self.word_list, self.degree)
-        text_list = create_sentence(self.trie.hashmap, self.horoscope, [self.horoscope], self.degree, [], self.amount)
+        text_list = create_sentence(self.trie.hashmap, self.horoscope,
+        [self.horoscope], self.degree, [], self.amount)
         prediction = self.output(text_list)
         print(" ")
         print(prediction)
@@ -98,4 +100,3 @@ class UI:
                 text[i] = text[i][:-1]
         string = ''.join(map(str, text))
         return string
-
