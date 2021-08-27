@@ -12,5 +12,6 @@ Kurssin viimeisen viikon lähestyessä haluaisin varmistuksen, ettei ohjelmassan
 ole jotain merkittäviä puutoksia/kehityskohtia? Vaikuttaako tähän mennessä kirjoittamani aika-
 ja tilavaativuudet oikeilta / oikean suuntaisilta? 
 <br>
+<br>
 Ensi viikolla kirjoitan dokumentaatiot loppuun, siistin koodia ja kansioita,
 osallistun demotilaisuuteen sekä teen mahdolliset viimeiset muutokset.
