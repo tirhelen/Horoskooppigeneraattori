@@ -11,5 +11,4 @@
 ## Käyttö
 - Ohjelma kysyy syötteiksi horoskooppimerkkiä (stringinä), ennustuksen pituutta virkkeinä (numeroina)
  ja
-Markovin ketjun astetta (numeroina).
-- Syötteen perusteella ohjelma 
+Markovin ketjun astetta (numeroina). 
