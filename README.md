@@ -12,6 +12,8 @@
 <br>
 [Viikkoraportti 5](https://github.com/tirhelen/tiralabra/blob/7b4efa947167fb2efaefec696a1c6e8f872b9f87/documentation/viikkoraportti5.md)
 <br>
+[Viikkoraportti 6](https://github.com/tirhelen/tiralabra/blob/e59a51aef7c90aea4cfc4117750c84fda5f8260b/documentation/viikkoraportti6.md)
+<br>
 [Alustava testausraportti](https://github.com/tirhelen/tiralabra/blob/87dd8a3d9359f39fa4250d2d9c87909a7e4632c7/documentation/testausraportti.md)
 <br>
 [Toteutusdokumentti](https://github.com/tirhelen/tiralabra/blob/main/documentation/toteutusdokumentti.md)
