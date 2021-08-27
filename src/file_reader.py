@@ -1,22 +1,22 @@
 # -*- coding: utf-8 -*-
 
-def read_file(file):
+def lue_tiedosto(tiedosto):
     """Funktio lukee tekstitiedoston, jossa opetusdata on.
     Palauttaa listan datassa esiintyneista sanoista (ja valimerkeista)
     Args:
-        filename (string): opetusdatatiedoston nimi
+        tiedosto (string): opetusdatatiedoston nimi
     Returns:
         list : lista sanoista ja valimerkeista
     """
 
-    file = open(file, "r")
-    content = file.read()
-    content = content.replace("\n", " ")
-    content = content.replace(".", " .")
-    content = content.replace(",", " ,")
-    list = content.split(" ")
-    for word in list:
+    tiedosto = open(tiedosto, "r")
+    sisalto = tiedosto.read()
+    sisalto = sisalto.replace("\n", " ")
+    sisalto = sisalto.replace(".", " .")
+    sisalto = sisalto.replace(",", " ,")
+    lista = sisalto.split(" ")
+    for word in lista:
         if len(word) < 1:
-            list.remove(word)
-    file.close()
-    return list
+            lista.remove(word)
+    tiedosto.close()
+    return lista

@@ -2,45 +2,60 @@
 import random
 
 
-def create_sentence(dict, start, sentence, degree, help_list, length):
+def luo_ennustus(sanakirja, alku, ennustus, aste, apulista, pituus):
     """luo ennustuksen käyttäen syötteenä annettavaa pituutta ja ketjun astetta
 
     Args:
-        dict (dictionary): käytettävä trie, johon aineisto on tallennettu
-        start (string): virkkeen aloitussana tai myöhemmin seuraava valittu sana
-        sentence (list): lista, johon muodostettava lause kootaan
-        degree (int): käytettävä markovin ketjun aste
-        help_list (list): apulista, jota käytetään uuden avaimen valitsemiseksi
+        sanakirja (sanakirja): käytettävä trie, johon aineisto on tallennettu
+        alku (string): virkkeen aloitussana tai myöhemmin seuraava valittu sana
+        ennustus (list): lista, johon muodostettava lause kootaan
+        aste (int): käytettävä markovin ketjun aste
+        apulista (list): apulista, jota käytetään uuden avaimen valitsemiseksi
         lenght (int): ennustuksen pituus virkkeinä
 
     Returns:
-        sentence (list): lista lopullisesta lauseesta
+        ennustus (list): lista lopullisesta lauseesta
     """
 
-    if sentence.count(". ") == length:
-        return sentence
+    if ennustus.count(". ") == pituus:
+        return siisti_teksti(ennustus)
 
-    choices = []
-    for x in dict[start]:
-        for j in range(x[1]):
-            if x[0] not in ["JOUSIMIES", "KAKSONEN", "RAPU", "LEIJONA",
+    valittavat = []
+    for x in sanakirja[alku]:
+        for j in range(sanakirja[alku][x]):
+            if x not in ["JOUSIMIES", "KAKSONEN", "RAPU", "LEIJONA",
                             "VESIMIES", "NEITSYT", "SKORPIONI", "HÄRKÄ",
                             "OINAS", "VAAKA", "KAURIS", "KALAT"]:
-                choices.append(x[0])
+                valittavat.append(x)
             else:
-                choices.append(".")
+                valittavat.append(".")
 
-    next = random.choice(choices) + " "
+    seuraava = random.choice(valittavat) + " "
 
-    if next == ". " and start[-2] == ".":
-        return create_sentence(dict, ". ", sentence, degree, [], length)
+    if seuraava == ". " and alku[-2] == ".":
+        return luo_ennustus(sanakirja, ". ", ennustus, aste, [], pituus)
 
-    sentence.append(next)
-    help_list.append(next)
+    ennustus.append(seuraava)
+    apulista.append(seuraava)
 
-    if len(help_list) == degree+1:
-        help_list.pop(0)
+    if len(apulista) == aste+1:
+        apulista.pop(0)
 
-    next = ''.join(map(str, help_list))
+    seuraava = ''.join(map(str, apulista))
 
-    return create_sentence(dict, next, sentence, degree, help_list, length)
+    return luo_ennustus(sanakirja, seuraava, ennustus, aste, apulista, pituus)
+
+
+def siisti_teksti(teksti):
+    """siistii ennustetekstin helposti luettavaan muotoon
+    Args:
+        teksti (list): lista, joka sisältää ennustukseen kuuluvat sanat
+    Returns:
+        string: siistitty ennusteteksti joka voidaan tulostaa käyttäjälle
+    """
+
+    for i in range(len(teksti)-1):
+        if teksti[i+1] == ". " or teksti[i+1] == ", ":
+            teksti[i] = teksti[i][:-1]
+    string = ''.join(map(str, teksti))
+    return string

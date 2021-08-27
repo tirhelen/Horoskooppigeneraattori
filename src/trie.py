@@ -3,20 +3,20 @@
 class Trie:
     """luokka Trie-puurakenteelle, tallentaa solmun ja sen lapset sanakirjaan
     """
-    def __init__(self, lista, degree):
+    def __init__(self, sanalista, aste):
         """rakenteen konstruktori, joka muodostaa aineistosta sanakirjan
             käytettävän asteen mukaan
 
         Args:
-            lista (list): lista aineistossa esiintyvistä sanoista
-            degree (int): markovin ketjun aste
+            sanalista (list): sanalista aineistossa esiintyvistä sanoista
+            aste (int): markovin ketjun aste
         """
-        self.hashmap = {}
-        self.lista = lista
-        self.degree = degree
-        self.create()
+        self.sanakirja = {}
+        self.sanalista = sanalista
+        self.aste = aste
+        self.luo_trie()
 
-    def add_edge(self, a, b):
+    def lisaa_kaari(self, a, b):
         """lisää kaaren kahden solmun
         eli peräkkäin esiintyvien sanojen välille
 
@@ -24,33 +24,29 @@ class Trie:
             a (string): jokin tekstissa esiintyva sana
             b (string): a:ta seuraava sana
         """
-        if a not in self.hashmap:
-            self.hashmap[a] = [[b, 1]]
+        if a not in self.sanakirja:
+            self.sanakirja[a] = {b:1}
         else:
-            found = False
-            for x in self.hashmap[a]:
-                if x[0] == b:
-                    x[1] += 1
-                    found = True
-                    break
-            if found is False:
-                self.hashmap[a].append([b,1])
+            if b not in self.sanakirja[a]:
+                self.sanakirja[a][b] = 1
+            else:
+                self.sanakirja[a][b] += 1
 
 
-    def create(self):
-        """funktio, joka täyttää sanakirjan aineistosta muodostetun listan perusteella.
+    def luo_trie(self):
+        """funktio, joka täyttää sanakirjan aineistosta muodostetun sanalistan perusteella.
             sanakirjaan lisätään avaimiksi jokainen sana ja merkki sekä aina n (valittu aste)
             peräkkäin esiintyvää sanaa/merkkiä
         """
-        help_list = []
+        apulista = []
 
-        for i in range(self.degree+1):
-            help_list.append(self.lista[i])
-        for i in range(len(self.lista)-self.degree+1):
-            key = ""
-            for j in range(len(help_list)-1):
-                key += help_list[j] + " "
-                self.add_edge(key, help_list[j+1])
-            help_list.pop(0)
-            if i+self.degree+1 < len(self.lista):
-                help_list.append(self.lista[i+self.degree+1])
+        for i in range(self.aste+1):
+            apulista.append(self.sanalista[i])
+        for i in range(len(self.sanalista)-self.aste+1):
+            avain = ""
+            for j in range(len(apulista)-1):
+                avain += apulista[j] + " "
+                self.lisaa_kaari(avain, apulista[j+1])
+            apulista.pop(0)
+            if i+self.aste+1 < len(self.sanalista):
+                apulista.append(self.sanalista[i+self.aste+1])
