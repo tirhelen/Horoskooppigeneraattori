@@ -1,6 +1,6 @@
 import unittest
 import os
-from ..file_reader import lue_tiedosto
+from src.tiedostonluku import lue_tiedosto
 
 class TestFileReader(unittest.TestCase):
     def test_correct_list_from_file(self):

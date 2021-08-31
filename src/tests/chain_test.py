@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
-from ..markov_chain import luo_ennustus
-from ..trie import Trie
+from src.markovin_ketju import luo_ennustus
+from src.trie import Trie
 
 
 class TestMarkovChain(unittest.TestCase):

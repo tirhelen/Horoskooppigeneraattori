@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 import os
-from file_reader import lue_tiedosto
+from tiedostonluku import lue_tiedosto
 from trie import Trie
-from markov_chain import luo_ennustus
+from markovin_ketju import luo_ennustus
+from tekstin_siistija import siisti_teksti
 
 
 class UI:
@@ -25,7 +26,7 @@ class UI:
         """
         käynnissä = True
         print("Tervetuloa käyttämään horoskooppigeneraattoria!")
-        self.luo_ennustus_k()
+        self.luo_ennustus_syotteella()
         while käynnissä:
 
             print(" ")
@@ -38,14 +39,14 @@ class UI:
             if komento == 3:
                 käynnissä = False
             elif komento == 2:
-                self.luo_ennustus_k()
+                self.luo_ennustus_syotteella()
             elif komento == 1:
                 ennustus = luo_ennustus(self.trie.sanakirja, self.horoskooppi,
                 [self.horoskooppi], self.aste, [], self.pituus)
-                print(ennustus)
+                print(siisti_teksti(ennustus))
 
 
-    def luo_ennustus_k(self):
+    def luo_ennustus_syotteella(self):
         while True:
             horoskooppi = input("Kirjoita horoskooppimerkki, jolle haluat ennustuksen: ")
             self.horoskooppi = horoskooppi.upper()
@@ -73,7 +74,7 @@ class UI:
         ennustus = luo_ennustus(self.trie.sanakirja, self.horoskooppi,
         [self.horoskooppi], self.aste, [], self.pituus)
         print(" ")
-        print(ennustus)
+        print(siisti_teksti(ennustus))
 
 
     def horoskooppi_syotetty_oikein(self, horoskooppi):
@@ -82,4 +83,3 @@ class UI:
                             "OINAS", "VAAKA", "KAURIS", "KALAT"]:
             return False
         return True
-

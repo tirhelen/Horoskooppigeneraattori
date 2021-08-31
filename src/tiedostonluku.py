@@ -2,11 +2,11 @@
 
 def lue_tiedosto(tiedosto):
     """Funktio lukee tekstitiedoston, jossa opetusdata on.
-    Palauttaa listan datassa esiintyneista sanoista (ja valimerkeista)
+    Palauttaa listan datassa esiintyneista sanoista (ja välimerkeistä)
     Args:
         tiedosto (string): opetusdatatiedoston nimi
     Returns:
-        list : lista sanoista ja valimerkeista
+        lista (list): lista sanoista ja välimerkeistä
     """
 
     tiedosto = open(tiedosto, "r")

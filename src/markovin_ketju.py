@@ -14,11 +14,11 @@ def luo_ennustus(sanakirja, alku, ennustus, aste, apulista, pituus):
         lenght (int): ennustuksen pituus virkkeinä
 
     Returns:
-        ennustus (list): lista lopullisesta lauseesta
+        ennustus (list): ennustus listana
     """
 
     if ennustus.count(". ") == pituus:
-        return siisti_teksti(ennustus)
+        return ennustus
 
     valittavat = []
     for x in sanakirja[alku]:
@@ -44,18 +44,3 @@ def luo_ennustus(sanakirja, alku, ennustus, aste, apulista, pituus):
     seuraava = ''.join(map(str, apulista))
 
     return luo_ennustus(sanakirja, seuraava, ennustus, aste, apulista, pituus)
-
-
-def siisti_teksti(teksti):
-    """siistii ennustetekstin helposti luettavaan muotoon
-    Args:
-        teksti (list): lista, joka sisältää ennustukseen kuuluvat sanat
-    Returns:
-        string: siistitty ennusteteksti joka voidaan tulostaa käyttäjälle
-    """
-
-    for i in range(len(teksti)-1):
-        if teksti[i+1] == ". " or teksti[i+1] == ", ":
-            teksti[i] = teksti[i][:-1]
-    string = ''.join(map(str, teksti))
-    return string
