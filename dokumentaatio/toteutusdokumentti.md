@@ -31,9 +31,14 @@ voitaisiin ehkäistä.
 ## Lähteet:
 
 https://en.wikipedia.org/wiki/Trie
+<br>
 https://en.wikipedia.org/wiki/Markov_chain
+<br>
 https://medium.com/analytics-vidhya/making-a-text-generator-using-markov-chains-e17a67225d10
+<br>
 https://ohjelmistotekniikka-hy.github.io/materiaali
+<br>
 Antti Laaksonen - Tietorakenteet ja algoritmit-kirja (2021)
+<br>
 https://www.is.fi/menaiset/horoskooppi/
 

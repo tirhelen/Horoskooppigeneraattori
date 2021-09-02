@@ -1,11 +1,13 @@
 # Testausraportti
 
 ## Yksikkötestaus
+## Kattavuusraportti
+![Kattavuusraportti](testikattavuus.png)
 <br>
-Yksikkötestit voi suorittaa komennolla: 
+Yksikkötestit voi suorittaa komennolla: <br> 
 > poetry run invoke test
 <br>
-Testikattavuuden näkee komennolla:
+Testikattavuuden näkee myös komennolla: <br>
 > poetry run invoke coverage-report
 <br>
 Yksikkötestauksessa on testattu trien osalta 2. asteen Markovin ketjua varten
@@ -19,16 +21,15 @@ perustuu satunnaisuuteen, sen toimintaa on hankala yksikkötestata. Lisäksi tes
 Ohjelman tuotoksia on tarkasteltu eri Markovin ketjun asteilla ja
 horoskooppeja käyttäen. 
 <br>
+<br>
 **Testi 1**
 <br>
 <br>
 Käytetyt syötteet:
 <br>
-<br>
 Horoskooppi: Kaksonen <br>
 Pituus: 5 virkettä <br>
 Ketjun aste: 1 <br>
-<br>
 <br>
 Tulos: <br>
 "KAKSONEN Valikoi sanasi huolella.
@@ -48,11 +49,9 @@ Ainoastaan ensimmäinen ja viimeinen virke esiintyvät aineistossa samanlaisina.
 <br>
 Käytetyt syötteet:
 <br>
-<br>
 Horoskooppi: Vaaka <br>
 Pituus: 5 virkettä <br>
 Ketjun aste: 2 <br>
-<br>
 <br>
 Tulos: <br>
 VAAKA Keskity hyvinvointiin, terveyteen ja tärkeisiin läheisiin. 
@@ -72,11 +71,9 @@ Ensimmäinen ja kolmas virke löytyy aineistosta samanlaisina, muissa on jonkin 
 <br>
 Käytetyt syötteet:
 <br>
-<br>
 Horoskooppi: Vesimies <br>
 Pituus: 5 virkettä <br>
 Ketjun aste: 3 <br>
-<br>
 <br>
 Tulos: <br>
 "VESIMIES Satsaa terveellisiin elämäntapoihin ja hyvinvointiin. 
