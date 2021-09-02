@@ -1,27 +1,26 @@
 # Tira-labratyö
 
+## Dokumentit
 [Määrittelydokumentti](https://github.com/tirhelen/tiralabra/blob/2421251481009fb360f52bffd6505a979e53effd/documentation/maarittelydokumentti.md)
 <br>
-[Viikkoraportti 1](https://github.com/tirhelen/tiralabra/blob/2421251481009fb360f52bffd6505a979e53effd/documentation/viikkoraportti1.md)
+[Käyttöohje](https://github.com/tirhelen/tiralabra/blob/25fd5ac50a50eb6603f9ddf3cbdf9647dbd50e98/dokumentaatio/kaytto-ohje.md)
 <br>
-[Viikkoraportti 2](https://github.com/tirhelen/tiralabra/blob/4ae8336c337cfd561237d3ec72ae782562ecc6cb/documentation/viikkoraportti2.md)
+[Toteutusdokumentti](https://github.com/tirhelen/tiralabra/blob/25fd5ac50a50eb6603f9ddf3cbdf9647dbd50e98/dokumentaatio/toteutusdokumentti.md)
 <br>
-[Viikkoraportti 3](https://github.com/tirhelen/tiralabra/blob/528594081a7cb19717c8f41e61bbd97692fdc6bd/documentation/viikkoraportti3.md)
+[Testausdokumentti](https://github.com/tirhelen/tiralabra/blob/25fd5ac50a50eb6603f9ddf3cbdf9647dbd50e98/dokumentaatio/testausraportti.md)
 <br>
-[Viikkoraportti 4](https://github.com/tirhelen/tiralabra/blob/87dd8a3d9359f39fa4250d2d9c87909a7e4632c7/documentation/viikkoraportti4.md)
+
+## Viikkoraportit
+[Viikkoraportti 1](https://github.com/tirhelen/tiralabra/blob/25fd5ac50a50eb6603f9ddf3cbdf9647dbd50e98/dokumentaatio/viikkoraportit/viikkoraportti1.md)
 <br>
-[Viikkoraportti 5](https://github.com/tirhelen/tiralabra/blob/7b4efa947167fb2efaefec696a1c6e8f872b9f87/documentation/viikkoraportti5.md)
+[Viikkoraportti 2](https://github.com/tirhelen/tiralabra/blob/25fd5ac50a50eb6603f9ddf3cbdf9647dbd50e98/dokumentaatio/viikkoraportit/viikkoraportti2.md)
 <br>
-[Viikkoraportti 6](https://github.com/tirhelen/tiralabra/blob/e59a51aef7c90aea4cfc4117750c84fda5f8260b/documentation/viikkoraportti6.md)
+[Viikkoraportti 3](https://github.com/tirhelen/tiralabra/blob/25fd5ac50a50eb6603f9ddf3cbdf9647dbd50e98/dokumentaatio/viikkoraportit/viikkoraportti3.md)
 <br>
-[Alustava testausraportti](https://github.com/tirhelen/tiralabra/blob/87dd8a3d9359f39fa4250d2d9c87909a7e4632c7/documentation/testausraportti.md)
+[Viikkoraportti 4](https://github.com/tirhelen/tiralabra/blob/25fd5ac50a50eb6603f9ddf3cbdf9647dbd50e98/dokumentaatio/viikkoraportit/viikkoraportti4.md)
 <br>
-[Toteutusdokumentti](https://github.com/tirhelen/tiralabra/blob/main/documentation/toteutusdokumentti.md)
+[Viikkoraportti 5](https://github.com/tirhelen/tiralabra/blob/25fd5ac50a50eb6603f9ddf3cbdf9647dbd50e98/dokumentaatio/viikkoraportit/viikkoraportti5.md)
 <br>
-[Alustava käyttöohje](https://github.com/tirhelen/tiralabra/blob/main/documentation/kaytto-ohje.md)
+[Viikkoraportti 6](https://github.com/tirhelen/tiralabra/blob/25fd5ac50a50eb6603f9ddf3cbdf9647dbd50e98/dokumentaatio/viikkoraportit/viikkoraportti6.md)
 <br>
-Testit voi suorittaa komennolla: poetry run invoke test <br>
-Testikattavuuden näkee komennolla: poetry run invoke coverage-report <br>
-Koodin laadun arvion näkee komenolla: poetry run invoke lint <br>
-Ohjelma käynnistää komennolla: poetry run invoke start 
 
