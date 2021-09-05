@@ -1,13 +1,15 @@
 # Tira-labratyö
 
+[Lopullinen palautus](https://github.com/tirhelen/tiralabra/releases/tag/v1.0)
+
 ## Dokumentit
-[Määrittelydokumentti](https://github.com/tirhelen/tiralabra/blob/2421251481009fb360f52bffd6505a979e53effd/documentation/maarittelydokumentti.md)
+[Määrittelydokumentti](https://github.com/tirhelen/tiralabra/blob/main/dokumentaatio/maarittelydokumentti.md)
 <br>
-[Käyttöohje](https://github.com/tirhelen/tiralabra/blob/25fd5ac50a50eb6603f9ddf3cbdf9647dbd50e98/dokumentaatio/kaytto-ohje.md)
+[Käyttöohje](https://github.com/tirhelen/tiralabra/blob/main/dokumentaatio/kaytto-ohje.md)
 <br>
-[Toteutusdokumentti](https://github.com/tirhelen/tiralabra/blob/25fd5ac50a50eb6603f9ddf3cbdf9647dbd50e98/dokumentaatio/toteutusdokumentti.md)
+[Toteutusdokumentti](https://github.com/tirhelen/tiralabra/blob/main/dokumentaatio/toteutusdokumentti.md)
 <br>
-[Testausdokumentti](https://github.com/tirhelen/tiralabra/blob/25fd5ac50a50eb6603f9ddf3cbdf9647dbd50e98/dokumentaatio/testausraportti.md)
+[Testausdokumentti](https://github.com/tirhelen/tiralabra/blob/main/dokumentaatio/testausraportti.md)
 <br>
 
 ## Viikkoraportit
