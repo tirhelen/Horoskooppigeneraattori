@@ -1,4 +1,6 @@
-# Tira-labratyö
+# Horoskooppigeneraattori
+
+Luotu osana Helsingin yliopiston [Tietorakenteet ja Algoritmit-projektityötä](https://sisu.helsinki.fi/student/courseunit/hy-CU-118025627-2021-08-01/).
 
 [Lopullinen palautus](https://github.com/tirhelen/tiralabra/releases/tag/v1.0)
 
